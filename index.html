@@ -151,7 +151,7 @@ mymenu.style.display="block";
     <button class="button pointer" onMouseOver="msgs.innerHTML='SPOOF + HEN + FTP + BINLOADER'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_goldhen10(); return false" style="font-size:20px;text-align:center;background-color: #955d2e;color:white">GOLDHEN V1.0</button>
     <br>
     <div style=font-size:20px;text-align:center;color:#6441a5;>PAYLOADS</div>
-    <button class="button pointer" onMouseOver="msgs.innerHTML='APLICAR BINLOADER'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_binloader(); return false">BINLOADER</button>
+    <button class="button pointer" onMouseOver="msgs.innerHTML='APLICAR BINLOADER'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_binloader(); return false" style="font-size:20px;text-align:center;background-color: #6441a5;color:white">BINLOADER</button>
     <button class="button pointer" onMouseOver="msgs.innerHTML='APLICAR CHEATS'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_webrte(); return false" style="font-size:20px;text-align:center;background-color: #6441a5;color:white">WEBRTE</button>
     <button class="button pointer" onMouseOver="msgs.innerHTML='ATIVAR CONTA OFFLINE ETC'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_ps4debug(); return false" style="font-size:20px;text-align:center;background-color: #6441a5;color:white">PS4 DEBUG</button>
 	<button class="button pointer" onMouseOver="msgs.innerHTML='DESATIVAR UPDATES DO SISTEMA'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_disableupdates(); return false" style="font-size:20px;text-align:center;background-color: #6441a5;color:white">OFF UPDATES</button>
@@ -185,6 +185,13 @@ PLfile = "pl_goldhen_1.0.bin";
 load_exploit();
 }
 
+function load_binloader(){
+msgs.innerHTML='APLICANDO BINLOADER';
+LoadedMSG="ENVIE PAYLOAD PARA PORTA 9021";
+function loadScript(){getScript("exp_loaderBL.js",function(){});}
+loadScript();
+}
+
 function load_disableupdates(){
 msgs.innerHTML='APLICANDO DESATIVAR UPDATES';
 LoadedMSG="DESATIVAR UPDATES APLICADO";
@@ -192,13 +199,6 @@ PLfile = "pl_disableupdates.bin";
 loadScript2();
 }
 
-function load_binloader(){
-msgs.innerHTML='APLICANDO BINLOADER';
-LoadedMSG="ENVIE PAYLOAD PARA PORTA 9021";
-function loadScript(){getScript("exp_loaderBL.js",function(){});}
-loadScript();
-}
-	
 function load_ps4debug(){
 msgs.innerHTML='CARREGANDO PS4 DEBUG';
 LoadedMSG="PS4 DEBUG CARREGADO.";
