@@ -1,0 +1,218 @@
+<html manifest="NK702ASG.cache">
+    <style>
+          .bg {
+		        /* The image used */
+		        background-image: url("1.jpg");
+		        font-family: system-ui;
+		        /* Center and scale the image nicely */
+		        background-position: center;
+		        background-repeat: no-repeat;
+            background-size: cover;
+            color:white;
+            font-size:20px;
+            text-align:center;
+            }
+        .button {
+          background-color: white;  
+          border-radius: 5px;
+          border: 2px solid black;
+          color: #4863A0;
+          padding: .5em;
+          text-decoration: none;
+          display:inline-table;
+          font-family: system-ui;
+          font-size: 20px;
+          text-align: center;
+          width: 200px;
+          height: 50px; 
+        }
+        .button:focus,
+        .button:hover {
+          box-shadow: 0 5px 50px 0 white;
+          color: #4863A0;
+          border-radius: 10px;}
+    
+          .temp {
+          background-color: white;  
+          border-radius: 5px;
+          border: 2px solid black;
+          color: white;
+          padding: .5em;
+          text-decoration: none;
+          display:inline-table;
+          font-family: system-ui;
+          font-size: 20px;
+          text-align: center;
+          width: 50px;
+          height: 25px; 
+          
+            }
+    
+        .temp:focus,
+        .temp:hover {
+        box-shadow: 0 5px 50px 0 white;
+        color: white;
+        border-radius: 10px;}
+    
+        .fail{
+            float:right;
+            margin-right:2.25%;
+            margin-top: 11px;
+            font-weight:bold;
+            font-size:28px;
+            color: white;
+             }
+           .pass {
+           float:left;
+           margin-left:1.25%;
+           font-weight:bold;
+           margin-top: 11px;
+           font-size:28px;
+           color: white;
+           }
+    
+           .titlehead {
+              background-color: #192025;  
+              border-radius: 5px;
+              color: white;
+              padding: .5em;
+              text-decoration: none;
+              text-align: center;
+              margin-top: -10px;
+              margin-bottom: -10px;
+              font-family: system-ui;
+              font-size:30px;
+            }
+    
+            .titlehead:focus,
+            .titlehead:hover {
+              box-shadow: 0 5px 50px 0 white;
+              background-color: rgb(1, 1, 22);
+              color: #665cbe;
+            }
+            .pointer {cursor: pointer;}
+			<span id="date" ></span><span id="clock" ></span>
+    
+    </style>
+<head>
+<title>PS4 JAILBREAK 7.02</title>
+<script>
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="APLICANDO CACHE: " + Percent + "%"};
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="CACHE APLICADO COM SUCESSO";localStorage.isNK702ASGcached=true;},1000);setTimeout(function(){window.msgs.innerHTML="DESATIVE A INTERNET E RE-ABRA PARA INICIAR O WEBKIT!!";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
+<body class="bg" onload="go()">
+<h1 id=msgs class="titlehead">PS4 JAILBREAK 7.02</h1>
+<br>
+<div id=dlog></div>
+<button style=opacity:0 id="input1" onfocus="handle2()"></button>
+<button style=opacity:0 id="input2"></button>
+<button style=opacity:0 id="input3" onfocus="handle2()"></button>
+<select style=opacity:0 id="select1">
+<option value="value1">Value1</option>
+</select>
+<script src="utils.js"></script>
+<script src="int64.js"></script>
+<script src="ps4.js"></script>
+<script>
+function print(){}
+
+var scriptCode = '';
+
+function preloadScripts(lst){
+for(var i=0;i<lst.length;i++){var xhr=new XMLHttpRequest();xhr.open('GET',lst[i],false);xhr.send('');scriptCode+=xhr.responseText+'\n';}
+}
+
+function done(){
+    if(main_ret == 0 || main_ret == 179)
+    {
+        //alert("Tudo Pronto!");
+    }
+    else
+        alert("Jailbreak Falhou! Reinicie o PS4!");
+}
+
+window.midExploit = function(){
+preloadScripts(['blob.js'], go);
+}
+
+window.postExploit = function(){
+dlog.remove();
+mymenu.style.display="block";
+    setTimeout(function()
+	{
+	eval.call(window, scriptCode);
+	done();
+	}, 100);
+};
+</script>
+<div id=mymenu style="text-align:center;display:none">
+    <a class="pass" style="color: white;text-shadow: 4px 4px 4px black;font-size:30px; font-weight: bold;">Sucesso = <span id=passCounter></span></a><a  class="fail" style="color: #6441a5;text-shadow: 4px 4px 4px black;font-size:30px; font-weight: bold;">Falhou = <span id=failCounter></span> </a>
+    <div style=font-size:20px;text-align:center;color:#955d2e;>GOLDHEN</div>
+    <button class="button pointer" onMouseOver="msgs.innerHTML='SPOOF + HEN + FTP + BINLOADER'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_goldhen10(); return false" style="font-size:20px;text-align:center;background-color: #955d2e;color:white">GOLDHEN V1.0</button>
+    <br>
+    <div style=font-size:20px;text-align:center;color:#6441a5;>PAYLOADS</div>
+    <button class="button pointer" onMouseOver="msgs.innerHTML='APLICAR BINLOADER'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_binloader(); return false">BINLOADER</button>
+    <button class="button pointer" onMouseOver="msgs.innerHTML='APLICAR CHEATS'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_webrte(); return false" style="font-size:20px;text-align:center;background-color: #6441a5;color:white">WEBRTE</button>
+    <button class="button pointer" onMouseOver="msgs.innerHTML='ATIVAR CONTA OFFLINE ETC'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_ps4debug(); return false" style="font-size:20px;text-align:center;background-color: #6441a5;color:white">PS4 DEBUG</button>
+	<button class="button pointer" onMouseOver="msgs.innerHTML='DESATIVAR UPDATES DO SISTEMA'"; onmouseout="msgs.innerHTML='PS4 JAILBREAK 7.02'" onclick="load_disableupdates(); return false" style="font-size:20px;text-align:center;background-color: #6441a5;color:white">OFF UPDATES</button>
+    <br>
+    </div>
+<script>
+UA = navigator.userAgent.substring(navigator.userAgent.indexOf("0.00 (") + 28, navigator.userAgent.indexOf(") Apple"));
+if (UA == ""){PS4fw.innerHTML=""+UA+""};if(UA != ""){PS4fw.innerHTML=""+UA};
+function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+function loadScript2(){getScript("exp_loaderPL.js",function(){});}
+</script>
+<script>
+if (localStorage.passcount == null) localStorage.passcount=0;
+window.passCounter.innerHTML=localStorage.passcount;
+if (localStorage.failcount == null) localStorage.failcount=0;
+window.failCounter.innerHTML=localStorage.failcount;
+
+function load_exploit(){
+msgs.innerHTML='APLICANDO ESPERE';
+if (PLfile == "pl_goldhen_1.0.bin"){
+  LoadedMSG="GOLDHEN V1.0 APLICADO";
+}
+function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+function loadScript(){getScript("exp_jailbreak.js",function(){setTimeout(jailbreak,1000);});}loadScript();
+}
+
+function load_goldhen10(){
+msgs.innerHTML='APLICANDO GOLDHEN V1.0';
+LoadedMSG="GOLDHEN V1.0 APLICADO";
+PLfile = "pl_goldhen_1.0.bin";
+load_exploit();
+}
+
+function load_disableupdates(){
+msgs.innerHTML='APLICANDO DESATIVAR UPDATES';
+LoadedMSG="DESATIVAR UPDATES APLICADO";
+PLfile = "pl_disableupdates.bin";
+loadScript2();
+}
+
+function load_binloader(){
+msgs.innerHTML='APLICANDO BINLOADER';
+LoadedMSG="ENVIE PAYLOAD PARA PORTA 9021";
+function loadScript(){getScript("exp_loaderBL.js",function(){});}
+loadScript();
+}
+	
+function load_ps4debug(){
+msgs.innerHTML='CARREGANDO PS4 DEBUG';
+LoadedMSG="PS4 DEBUG CARREGADO.";
+PLfile = "pl_ps4debug.bin";
+loadScript2();
+}
+
+function load_webrte(){
+msgs.innerHTML='APLICANDO WEBRTE';
+LoadedMSG="WEBRTE APLICADO";
+PLfile = "pl_webrte.bin";
+loadScript2();
+}
+
+</script>
+</body>
+</html>
